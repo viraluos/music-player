@@ -1,17 +1,24 @@
-const PlaylistHeader = () => {
+import { twMerge } from "tailwind-merge";
+
+interface HeaderProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+
+const PlaylistHeader: React.FC<HeaderProps> = ({
+    children,
+    className
+}) => {
     return (
-        <div>
+        <div className={twMerge( `text-5xl p-4 bg-gradient-to-b`, className )}>
         
-            playlist header
+            Bentornato.
             
         </div>
     );
     {
         /*
-            - search
             - title
-            - arrow_down
-            - menu? (settings, playlist, library, account? )
         */
     }
 };
