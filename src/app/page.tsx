@@ -3,7 +3,7 @@ import Content from "@/components/Content";
 
 export default function Home() {
   return (
-    <div className="flex p-2">
+    <div className="flex-col-reverse md:flex-row flex p-2 gap-2">
       
       < Sidebar />
 
