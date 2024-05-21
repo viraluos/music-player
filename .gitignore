@@ -38,3 +38,5 @@ next-env.d.ts
 # custom
 /db/
 .pass
+types.ts
+types_db.ts
