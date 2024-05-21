@@ -11,11 +11,11 @@ const Playlist: React.FC<PlaylistProps> = ({
     children,
     className
 }) => {
-    return (        
-        <div className={twMerge( `w-full h-full`, className )}>
-            
+    return (
+        <div className={twMerge( `w-full`, className )}> 
+
             < Elements />
-            
+
         </div>
     );
 };
