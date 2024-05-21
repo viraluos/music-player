@@ -1,8 +1,8 @@
 "use client"
 
 import { twMerge } from "tailwind-merge";
-import { AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, useEffect, useState  } from "react";
-import Link from "next/link";
+import { Key, useEffect, useState  } from "react";
+// import Link from "next/link";
 import Image from "next/image";
 
 import supabase from "@/utils/supabase";
@@ -38,7 +38,7 @@ const Elements: React.FC<ElementsProps> = ({
 
     return songs.map((song: { id: Key | null; title: string; song_path: string; image_path: string;  }) => (
         <p key={song.id}>
-            <div className={twMerge( `w-full h-[50px]  text-white p-4`, className )}>
+            <div className={twMerge( `w-full h-[50px] text-white p-4`, className )}>
                 <div>
                     <Image
                         src={process.env.NEXT_PUBLIC_SUPABASE_URL + song.image_path + ".png"}
