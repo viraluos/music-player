@@ -1,7 +1,7 @@
 "use client"
 
 import { twMerge } from "tailwind-merge";
-import { useEffect, useState  } from "react";
+import { AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, useEffect, useState  } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -36,7 +36,7 @@ const Elements: React.FC<ElementsProps> = ({
     if(!songs)
         return <p>No songs found.</p>
 
-    return songs.map((song) => (
+    return songs.map((song: { id: Key | null; title: string; song_path: string; image_path: string;  }) => (
         <p key={song.id}>
             <div className={twMerge( `w-full h-[50px]  text-white p-4`, className )}>
                 <div>
