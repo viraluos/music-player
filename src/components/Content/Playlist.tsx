@@ -12,7 +12,7 @@ const Playlist: React.FC<PlaylistProps> = ({
     className
 }) => {
     return (
-        <div className={twMerge( `w-full`, className )}> 
+        <div className={twMerge( `w-full h-fit md:h-full overflow-y-scroll`, className )}> 
 
             < Elements />
 

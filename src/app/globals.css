@@ -9,3 +9,16 @@ body,
   color-scheme: dark;
   background-color: #000;
 }
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}

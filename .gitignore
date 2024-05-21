@@ -37,6 +37,7 @@ next-env.d.ts
 
 # custom
 /db/
+/safe/
 .pass
 types.ts
 types_db.ts

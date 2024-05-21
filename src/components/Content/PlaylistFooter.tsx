@@ -11,7 +11,9 @@ const PlaylistFooter: React.FC<FooterProps> = ({
 }) => {
     return (
         <div className={twMerge( `w-full p-4 bg-gradient-to-t`, className )}>
+            
             playlist footer
+
         </div>
     );
     {
