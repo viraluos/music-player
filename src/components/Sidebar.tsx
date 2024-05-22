@@ -12,9 +12,10 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({}) => {
-  
     const [minWidth, maxWidth, defaultWidth] = [200, 1600, 400];
-    const [width, setWidth] = useState( parseInt(localStorage.getItem("sidebarWidth") || defaultWidth.toString()));
+    const sidebarwidth = parseInt(localStorage.getItem("sidebarWidth") || defaultWidth.toString())
+
+    const [width, setWidth] = useState( sidebarwidth  );
     const isResized = useRef(false);
 
     useEffect(() => {
@@ -22,12 +23,10 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
         if (!isResized.current) {
           return;
         }
-   
+
         setWidth((previousWidth) => {
           const newWidth = previousWidth + e.movementX;
-      
           const isWidthInRange = newWidth >= minWidth && newWidth <= maxWidth;
-      
           return isWidthInRange ? newWidth : previousWidth;
         });
       });
