@@ -1,19 +1,23 @@
-import Image from "next/image";
+import SongInfo from "@/components/Player/SongInfo";
 
 const Player = () => {
     return (
-        <div className="p-2">player</div>
+        <div className="p-2">
+            <SongInfo />
+            <div>volume</div>
+            <div>controls</div>
+        </div>
     );
     {
         /*
-        - image
-        - song info
-        - progress bar
-        - volume bar
-        - controls
+            - image
+            - song info
+            - progress bar
+            - volume bar
+            - controls
         
         <Image
-          src=`${current_image}`
+          src={current_image}
           width={350}
           height={350}
           alt="Main image"
@@ -21,10 +25,6 @@ const Player = () => {
         
         <div>
             < SongInfo />
-        </div>
-        
-        <div>
-            < Time />
         </div>
 
         <div>

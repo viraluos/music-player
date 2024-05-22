@@ -13,7 +13,9 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({}) => {
+  
     const [minWidth, maxWidth, defaultWidth] = [200, 1600, 400];
+  /*
     const [value, setValue] = useLocalStorage("sidebarWidth", "");
 
     const [width, setWidth] = useState( value );
@@ -54,9 +56,14 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
     {
       // component con tutto questo e gli passo la width
     }
-
+*/
     return (
-      <div style={{ width: `${width}px` }} className="w-full md:flex resize-x lg:w-fit">
+      <div className={`w-[400px] md:flex`}> 
+      
+      {/* 
+        style={ width: `${width}px` }
+        resize-x
+      */}
 
         <div className="flex flex-col w-full">
 
@@ -76,10 +83,8 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
 
         <div
           className="w-2 h-full cursor-col-resize"
-          onMouseDown={() => {
-            isResized.current = true;
-          }}
-        />
+          
+        /> {/*onMouseDown={() => { isResized.current = true; }}*/}
 
       </div>
     );
