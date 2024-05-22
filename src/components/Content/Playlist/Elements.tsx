@@ -37,7 +37,7 @@ const Elements: React.FC<ElementsProps> = ({
 
     return songs.map((song: { id: Key | null; title: string; author: string; song_path: string; image_path: string; }) => (
         <div key={song.id}>
-            <div className={twMerge( `w-full h-[60px] text-white p-2`, className )}>
+            <div className={twMerge( `hover:bg-neutral-700 transition cursor-pointer w-full h-[60px] text-white p-2 `, className )}>
                 <div className="flex select-none">
                     <Image
                         src={ process.env.NEXT_PUBLIC_SUPABASE_URL + song.image_path + ".png" }

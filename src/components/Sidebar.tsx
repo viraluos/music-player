@@ -45,7 +45,9 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
     }, [width]);
 
     if (!width)
-      return (<></>)
+      return(
+        <></>
+      )
 
     {
       // component con tutto questo e gli passo la width
