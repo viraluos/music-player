@@ -20,21 +20,23 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
     const isResized = useRef(false);
 
     useEffect(() => {
-      window.addEventListener("mousemove", (e) => {
-        if (!isResized.current) {
-          return;
-        }
+      if(typeof window !== "undefined"){
+        window.addEventListener("mousemove", (e) => {
+          if (!isResized.current) {
+            return;
+          }
 
-        setWidth((previousWidth: number) => {
-          const newWidth = previousWidth + e.movementX;
-          const isWidthInRange = newWidth >= minWidth && newWidth <= maxWidth;
-          return isWidthInRange ? newWidth : previousWidth;
+          setWidth((previousWidth: number) => {
+            const newWidth = previousWidth + e.movementX;
+            const isWidthInRange = newWidth >= minWidth && newWidth <= maxWidth;
+            return isWidthInRange ? newWidth : previousWidth;
+          });
         });
-      });
 
-      window.addEventListener("mouseup", () => {
-        isResized.current = false;
-      });
+        window.addEventListener("mouseup", () => {
+          isResized.current = false;
+        });
+      }
 
       console.log("Storage Value: ", value)
       setWidth(value);
