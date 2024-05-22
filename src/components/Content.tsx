@@ -2,7 +2,14 @@ import PlaylistHeader from "./Content/PlaylistHeader";
 import Playlist from "./Content/Playlist";
 import PlaylistFooter from "./Content/PlaylistFooter";
 
-const grandient_color = "from-yellow-700";
+import { 
+  redColorScheme, 
+  greenColorScheme, 
+  yellowColorScheme, 
+  blueColorScheme  
+} from '@/components/Global';
+
+const grandient_color = `from-${blueColorScheme}`;
 
 export default function Content() {
     return (

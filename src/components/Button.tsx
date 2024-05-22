@@ -1,8 +1,14 @@
 import { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+import { 
+  redColorScheme, 
+  greenColorScheme, 
+  yellowColorScheme, 
+  blueColorScheme  
+} from '@/components/Global';
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   className,
@@ -17,8 +23,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
       className={twMerge(
         `
         w-full 
-        rounded-full 
-        bg-green-500
+        rounded-lg 
+        bg-blue-500
         border
         border-transparent
         px-3 
