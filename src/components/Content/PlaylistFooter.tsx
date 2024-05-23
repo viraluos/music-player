@@ -17,7 +17,7 @@ const PlaylistFooter: React.FC<FooterProps> = ({
     children,
     className
 }) => {
-    
+     
     return (
         <div className={twMerge( `w-full p-4 bg-gradient-to-t flex justify-between`, className )}>
             
