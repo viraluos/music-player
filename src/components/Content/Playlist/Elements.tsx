@@ -40,7 +40,7 @@ const Elements: React.FC<ElementsProps> = ({
             <div className={twMerge( `hover:bg-neutral-700 transition cursor-pointer w-full h-[60px] text-white p-2 `, className )}>
                 <div className="flex select-none">
                     <Image
-                        src={ process.env.NEXT_PUBLIC_SUPABASE_URL + song.webp_path }
+                        src={ process.env.NEXT_PUBLIC_SUPABASE_STORAGE_URL + song.webp_path }
                         width={50}
                         height={50}
                         alt={song.title}

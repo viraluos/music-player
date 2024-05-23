@@ -7,6 +7,7 @@ import usePlayer from "@/hooks/usePlayer";
 import { useUser } from "@/hooks/useUser";
 
 import Button from '@/components/Button';
+import AuthModal from '@/components/Modal/AuthModal';
 
 const AccountButtons = () => {
     const authModal = useAuthModal();
@@ -29,9 +30,11 @@ const AccountButtons = () => {
 
     return (
       <div>
+
+        <AuthModal />
         
         {  user ? (
-                <>
+                <div>
                     <Button 
                         onClick={handleLogout}
                         className="w-fit"
@@ -42,16 +45,17 @@ const AccountButtons = () => {
                         className="w-fit"
                     > Account
                     </Button>
-                </>
+                </div>
         ) : (
-                <>
+                <div>
                     <Button 
                         onClick={authModal.onOpen} 
                     > Log in
                     </Button>
-                 </>
+                 </div>
         ) }
       </div>
+
     );
 };
 

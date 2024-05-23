@@ -8,21 +8,25 @@ import { useRouter } from 'next/navigation';
 
 import useAuthModal from "@/hooks/useAuthModal";
 
+import { createClient } from '@/utils/supabase/client';
+
 import Modal from './Modal';
+import { redColorScheme } from '../Global';
 
 const AuthModal = () => {
+  const supabaseClient = createClient();
+
   const { session } = useSessionContext();
   const router = useRouter();
   const { onClose, isOpen } = useAuthModal();
-  
-  const supabaseClient = useSupabaseClient();
 
   useEffect(() => {
+    console.log('supabaseClient', supabaseClient);
     if (session) {
       router.refresh();
       onClose();
     }
-  }, [session, router, onClose]);
+  }, [session, router, onClose, supabaseClient]);
 
   const onChange = (open: boolean) => {
     if (!open) {
@@ -32,7 +36,7 @@ const AuthModal = () => {
 
   return (
     <Modal 
-      title="Bentornato!" 
+      title="Bentornato" 
       description="Logga nel tuo account." 
       isOpen={isOpen} 
       onChange={onChange} 
@@ -46,8 +50,8 @@ const AuthModal = () => {
           variables: {
             default: {
               colors: {
-                brand: 'red',
-                brandAccent: 'darkred',
+                brand: `${redColorScheme}`,
+                brandAccent: `dark${redColorScheme}`,
               },
             },
           },

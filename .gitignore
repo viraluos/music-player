@@ -39,4 +39,3 @@ next-env.d.ts
 /db/
 /safe/
 .pass
-types_db.ts
